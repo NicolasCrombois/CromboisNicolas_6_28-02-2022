@@ -1,0 +1,7 @@
+Modal: aria-labelledby => id de la modal
+
+
+
+<p id="birdthday">Birthday</p>
+<input type="text" aria-labelledby="birdthday" aria-describedby="dateformat">
+<p id="dateformat">(yyyy/mm/dd)</p>

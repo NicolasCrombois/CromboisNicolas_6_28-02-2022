@@ -1,0 +1,83 @@
+@import url("photographer.css");
+
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+h1 {
+    color: #901C1C;
+    margin-right: 100px;
+}
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+    margin-top: 5px;
+}
+
+.photographer_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin: 100px 0;
+}
+
+.photographer_section article {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: none;
+    transition: text-shadow .4s ease-in;
+}
+
+.photographer_section article a h2 {
+    color: #D3573C;
+    font-size: 36px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.photographer_section article a img {
+    transition: width .4s ease-in, height .4s ease-in ;
+    height: 200px;
+    object-fit: cover;
+    width: 200px;
+    border-radius: 50%;
+}
+.photographer_section a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+}
+.photographer_section article h3{
+    color: #D3573C;
+    font-size: 20px;
+    margin: 0 0 5px 0;
+}
+.photographer_section article p{
+    margin: 5px 0;
+}
+
+.photographer_section article:hover {
+    transition: text-shadow .4s ease-in;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+.photographer_section img:hover{
+    transition: width .4s ease-in, height .4s ease-in ;
+    height: 220px;
+    width: 220px;
+}
