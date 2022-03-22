@@ -64,22 +64,31 @@
             role="button"
             class="inputBox"
             placeholder="Popularité"
-            value="Popularité"
+            value=""
             readonly>
-          <div class="option">
-            <div id="popularity" 
-            role="listbox" 
-            aria-haspopup="listbox"
-            aria-activedescendant="true"
-            aria-selected
-            aria-labelledby="filter"
-            onclick="setOption('Popularité', 'popularity')">Popularité</div>
+          <div class="option"
+          role="listbox" 
+          aria-haspopup="listbox"
+          aria-activedescendant="true"
+          aria-selected
+          aria-labelledby="filter">
+            <div id="popularity" onclick="setOption('Popularité', 'popularity')">Popularité</div>
             <div id="date" onclick="setOption('Date', 'date')">Date</div>
             <div id="title" onclick="setOption('Titre', 'title')">Titre</div>
           </div>
         </div>
       </div>
       <div id="list_publication">
+      </div>
+    </section>
+    <section id="lightbox">
+     <div class="menu">
+        <img id="closeModal" alt="Close Modal" src="assets/icons/close.svg" onclick="closeLightbox()" />
+        <img id="arrow-right" alt="Next Publication" src="assets/icons/arrow-right.svg" onclick="switchNext()" />
+        <img id="arrow-left" alt="Previous Publication" src="assets/icons/arrow-right.svg" onclick="switchPrevious()" />
+      </div> 
+      <div class="view">
+        
       </div>
     </section>
     <script src="scripts/factories/photographer.js"></script>

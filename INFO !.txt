@@ -5,3 +5,8 @@ Modal: aria-labelledby => id de la modal
 <p id="birdthday">Birthday</p>
 <input type="text" aria-labelledby="birdthday" aria-describedby="dateformat">
 <p id="dateformat">(yyyy/mm/dd)</p>
+
+
+
+https://stackoverflow.com/questions/36869615/how-to-edit-an-external-json-file-in-javascript
+https://www.codegrepper.com/code-examples/javascript/frameworks/jquery/edit+json+file+js

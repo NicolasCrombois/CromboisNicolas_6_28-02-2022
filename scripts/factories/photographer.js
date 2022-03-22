@@ -49,13 +49,17 @@ function photographerFactory(data) {
     function getBannerPriceLikePhotographer() {
         const div = document.createElement( 'div' );
         const like = document.createElement( 'p' );
-        const price = document.createElement( 'p' );
+        const p = document.createElement( 'p' );
 
-        price.innerHTML = `${price}€/jour`;
+        div.id = "likeAndPrice"
+        like.id = "totalLike"
 
-        div.appendChild(like, price);
+        p.textContent = `${price}€/jour`;
 
-        
+        div.appendChild(like);
+        div.appendChild(p);
+
+        return div;
     }
     return { getUserCardDOM, getUserInformation, getUserPicture, getBannerPriceLikePhotographer }
 }

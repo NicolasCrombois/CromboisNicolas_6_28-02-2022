@@ -5,6 +5,7 @@
     height: 100vh;
     top: 0;
     left: 0;
+    z-index: 2;
     background-color: rgba(255, 255, 255, 0.452);
 }
 
@@ -29,6 +30,9 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+.contact_button:hover {
+    background-color: #D3573C;
 }
 
 .modal {
@@ -140,6 +144,7 @@ form textarea{
 }
 #publication .dropbox{
     margin: 0;
+    z-index: 1;
     padding: 0;
     box-sizing: border-box;
     position: relative;
@@ -246,6 +251,7 @@ form textarea{
     width: 325px;
     height: 325px;
     border-radius: 5px;
+    cursor: pointer;
 }
 #publication .publication .information-publication{
     width: 325px;
@@ -253,4 +259,109 @@ form textarea{
     align-items: center;
     justify-content: space-between;
     color: #901C1C;
+}
+#publication .publication .information-publication i{
+    margin-left: 2px;
+    transition: all .7s;
+}
+#publication .publication .information-publication i:hover{
+    cursor: pointer;
+    margin-right: -3px;
+    margin-left: 1px;
+    margin-top: -1px;
+    font-size: 20px;
+    transition: all .7s;
+}
+#publication .publication .information-publication i.clicked{
+    color: #D3573C;
+    animation: rebond .7s;
+}
+@keyframes rebond{
+    50% {
+        margin-right: -1px;
+        margin-left: 3px;
+        font-size: 16px;
+    }
+}
+#likeAndPrice{
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+    display: flex;
+    flex-wrap: row;
+    max-width: 220px;
+    min-width: 150px;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #DB8876;
+    padding: 0px 20px;
+    border-radius: 5px 5px 0 0;
+}
+#likeAndPrice i{
+    margin: 0 5px;
+}
+#likeAndPrice #totalLike{
+    margin-right: 35px;
+}
+#lightbox{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffffc2
+}
+#lightbox .menu{
+    position: relative;
+    z-index: 3;
+}
+#lightbox .menu #arrow-left{
+    transform: rotate(180deg);
+    left: 10px;
+    width: 80px;
+    height: 80px;
+}
+#lightbox .menu #arrow-right{
+    right: 20px;
+    width: 80px;
+    height: 80px;
+}
+#lightbox .menu #arrow-left, #lightbox .menu #arrow-right{
+    position: absolute;
+    width: 120px;
+    filter: invert(15%) sepia(97%) saturate(1697%) hue-rotate(348deg) brightness(79%) contrast(97%);
+    top: calc(50vh - 40px);
+    cursor: pointer;
+}
+#lightbox .menu #closeModal{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    filter: invert(14%) sepia(42%) saturate(4403%) hue-rotate(347deg) brightness(82%) contrast(98%);
+    right: 50px;
+    top: 30px;
+    cursor: pointer;
+}
+#lightbox .view div{
+    position: absolute;
+    max-height: 95vh;
+    max-width: 90vw;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+#lightbox .view img, #lightbox .view video{
+    object-fit: cover;
+    max-height: 85vh;
+    max-width: 80vw;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(82, 82, 82, 0.616);
+}
+#lightbox .view h2{
+    color: #D3573C;
+    font-size: 24px;
+    font-weight: normal;
 }
