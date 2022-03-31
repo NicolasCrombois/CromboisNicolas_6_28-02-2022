@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <meta name="viewport">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1946d7ed35.js" crossorigin="anonymous"></script>
@@ -14,40 +15,40 @@
     </header>
     <main id="main">
       <div class="photograph-header" aria-label="Informations sur photographe">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button id="contact_button" class="contact_button" tabindex="0">Contactez-moi</button>
       </div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" id="contact_close_button" alt="Close contact modal" />
         </header>
 				<form>
 					<div>
 						<label id="firstname">Prénom</label>
 						<input 
             aria-labelledby="firstname"
-            aria-describedby="textformat"
+            aria-describedby="firstname"
             type="text"
             name="firstname"/>
 						<label id="name">Nom</label>
 						<input 
-            aria-labelledby="lastname"
-            aria-describedby="textformat"
+            aria-labelledby="name"
+            aria-describedby="name"
             type="text"
             name="lastname"/>
             <label id="email">Email</label>
             <input 
             aria-labelledby="email"
-            aria-describedby="emailformat"
+            aria-describedby="email"
             type="email"
             name="email"/>
             <label id="message">Votre message</label>
             <textarea
             name="message"
             aria-labelledby="message"
-            aria-describedby="textformat"
+            aria-describedby="message"
             type="text"></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
@@ -59,12 +60,12 @@
         <label id="filter">Trier par</label>
         <div class="dropbox">
           <input type="text"
+            aria-labelledby="filter"
             aria-haspopup="listbox"
             aria-expanded="true"
             role="button"
             class="inputBox"
             placeholder="Popularité"
-            value=""
             readonly>
           <div class="option"
           role="listbox" 
@@ -72,9 +73,9 @@
           aria-activedescendant="true"
           aria-selected
           aria-labelledby="filter">
-            <div id="popularity" onclick="setOption('Popularité', 'popularity')">Popularité</div>
-            <div id="date" onclick="setOption('Date', 'date')">Date</div>
-            <div id="title" onclick="setOption('Titre', 'title')">Titre</div>
+            <div id="popularity" tabindex=0 onclick="setOption('Popularité', 'popularity')">Popularité</div>
+            <div id="date" tabindex=0 onclick="setOption('Date', 'date')">Date</div>
+            <div id="title" tabindex=0 onclick="setOption('Titre', 'title')">Titre</div>
           </div>
         </div>
       </div>
@@ -83,9 +84,9 @@
     </section>
     <section id="lightbox">
      <div class="menu">
-        <img id="closeModal" alt="Close Modal" src="assets/icons/close.svg" onclick="closeLightbox()" />
-        <img id="arrow-right" alt="Next Publication" src="assets/icons/arrow-right.svg" onclick="switchNext()" />
-        <img id="arrow-left" alt="Previous Publication" src="assets/icons/arrow-right.svg" onclick="switchPrevious()" />
+        <img id="closeModal" alt="Close Modal" tabindex=3 src="assets/icons/close.svg" />
+        <img id="arrow-right" alt="Next Publication" tabindex=3 src="assets/icons/arrow-right.svg"/>
+        <img id="arrow-left" alt="Previous Publication" tabindex=3 src="assets/icons/arrow-right.svg"/>
       </div> 
       <div class="view">
         

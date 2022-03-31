@@ -9,7 +9,7 @@ function photographerFactory(data) {
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
-        img.alt = name
+        img.alt = `Photo de profil de `+name
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
         const h3 = document.createElement( 'h3' );
@@ -29,14 +29,14 @@ function photographerFactory(data) {
     function getUserInformation() {
         const div = document.createElement( 'div' );
         div.className = "information-photographer"
+        const h1 = document.createElement( 'h1' );
+        h1.innerHTML = name;
         const h2 = document.createElement( 'h2' );
-        h2.innerHTML = name;
-        const h3 = document.createElement( 'h3' );
-        h3.innerHTML = `${city}, ${country}`;
+        h2.innerHTML = `${city}, ${country}`;
         const p = document.createElement( 'p' );
         p.innerHTML = tagline;
+        div.appendChild(h1);
         div.appendChild(h2);
-        div.appendChild(h3);
         div.appendChild(p);
         return (div);
     }
@@ -48,16 +48,16 @@ function photographerFactory(data) {
     }
     function getBannerPriceLikePhotographer() {
         const div = document.createElement( 'div' );
-        const like = document.createElement( 'p' );
-        const p = document.createElement( 'p' );
+        const like = document.createElement( 'h3' );
+        const h3 = document.createElement( 'h3' );
 
         div.id = "likeAndPrice"
         like.id = "totalLike"
 
-        p.textContent = `${price}€/jour`;
+        h3.textContent = `${price}€/jour`;
 
         div.appendChild(like);
-        div.appendChild(p);
+        div.appendChild(h3);
 
         return div;
     }

@@ -17,24 +17,32 @@ function publicationFactory(data) {
         
         h2.textContent = title;
         p.textContent = `${likes} `;
+        p.tabIndex = 0;
+        p.id = id;
 
         if(image){
             const img = document.createElement( 'img' );
             img.setAttribute("src", `assets/photographers/${photographerId}/${image}`)
-            img.alt = title
-            img.onclick = function(){openView(id)};
+            img.alt = `Picture `+title
+            img.tabIndex = 0;
+            img.onclick = openView(id);
+            img.addEventListener("click",  function(){openView(id)});
+            img.addEventListener("keyup",  event => {checkKeyEnterOpenView(event, id)});
             article.appendChild(img)
         }else if(video){
             const movie = document.createElement( 'video' );
             const source = document.createElement( 'source' );
             source.setAttribute("src", `assets/photographers/${photographerId}/${video}`);
             source.setAttribute("type", `video/`+video.split(".").pop());
-            movie.appendChild(source)
-            movie.onclick = function(){openView(id)};
+            movie.appendChild(source);
+            movie.tabIndex = 0;
+            movie.addEventListener("keyup",  event => {checkKeyEnterOpenView(event, id)});
             article.appendChild(movie)
         }
 
         p.appendChild(i);
+    
+        p.addEventListener("keypress", event => {if(event.keyCode === 13){clickLike(id)}})
         div.appendChild(h2);
         div.appendChild(p);
         article.appendChild(div);
@@ -48,8 +56,10 @@ function publicationFactory(data) {
         i.ariaLabel = "likes";
         i.onclick = function(){clickLike(id)};
         
+        p.tabIndex = 0;
+        p.id = id;
         p.textContent = `${likes} `;
-
+        p.addEventListener("keypress", event => {if(event.keyCode === 13){clickLike(id)}})
 
         p.appendChild(i);
         return (p);
@@ -66,6 +76,7 @@ function publicationFactory(data) {
         }else if(video){
             const movie = document.createElement( 'video' );
             movie.controls = true;
+            movie.title = title;
             const source = document.createElement( 'source' );
             source.setAttribute("src", `assets/photographers/${photographerId}/${video}`);
             source.setAttribute("type", `video/`+video.split(".").pop());
@@ -76,6 +87,5 @@ function publicationFactory(data) {
         div.appendChild(h2)
         return div
     }
-    
     return { getPublicationCardDOM, getLikeDOM, getImgDOM }
 }

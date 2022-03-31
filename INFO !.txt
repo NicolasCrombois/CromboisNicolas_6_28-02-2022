@@ -1,12 +1,14 @@
-Modal: aria-labelledby => id de la modal
-
-
-
-<p id="birdthday">Birthday</p>
-<input type="text" aria-labelledby="birdthday" aria-describedby="dateformat">
-<p id="dateformat">(yyyy/mm/dd)</p>
-
-
-
 https://stackoverflow.com/questions/36869615/how-to-edit-an-external-json-file-in-javascript
 https://www.codegrepper.com/code-examples/javascript/frameworks/jquery/edit+json+file+js
+
+
+
+Le code est complet quand :
+❒ Aucun bug n'est rencontré.
+❒ Aucune erreur n'est affichée dans la console.  
+
+
+❒ Le code est bien commenté, ce qui signifie que toute intention qui ne peut être immédiatement comprise en regardant le code lui-même peut être comprise en lisant les commentaires.
+
+
+❒ L'envoi du formulaire (via le bouton Envoyer) permet d’afficher le contenu des 3 champs dans la console.
