@@ -3,9 +3,10 @@ function photographerFactory(data) {
 
     const picture = `assets/photographers_profile_picture/${portrait}`;
 
+    //Carte du photographe (Photo de profil + nom + position + slogan + prix)
     function getUserCardDOM() {
         const a = document.createElement( 'a' );
-        a.href = `./photographer.html?id=${id}&name=${name}`
+        a.href = `./photographer.html?id=${id}&namePhotographer=${name}`
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
@@ -26,6 +27,7 @@ function photographerFactory(data) {
         article.appendChild(p);
         return (article);
     }
+    //Bannière d'information du photographe
     function getUserInformation() {
         const div = document.createElement( 'div' );
         div.className = "information-photographer"
@@ -40,12 +42,14 @@ function photographerFactory(data) {
         div.appendChild(p);
         return (div);
     }
+    //Photo de profil du photographe
     function getUserPicture() {
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         img.alt = name
         return (img);
     }
+    //Information prix + like total du photographe (petite bannière fixe en base à droite de l'écran)
     function getBannerPriceLikePhotographer() {
         const div = document.createElement( 'div' );
         const like = document.createElement( 'h3' );

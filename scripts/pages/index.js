@@ -1,5 +1,5 @@
+//On récupère les données du fichier JSON photographers.json (uniquement les photographes)
 async function getPhotographers() {
-  //On récupère les données du fichier JSON photographers.json 
   return fetch("./data/photographers.json")
   .then(response => {
     return response.json();
@@ -7,6 +7,7 @@ async function getPhotographers() {
   .then((jsondata) => { return jsondata.photographers})
 }
 
+//Permet d'afficher les cartes de chaque photographe
 async function displayData(photographers) {
   const photographersSection = document.querySelector(".photographer_section");
   photographers.forEach((photographer) => {
@@ -17,7 +18,6 @@ async function displayData(photographers) {
 };
 
 async function init() {
-  // Récupère les datas des photographes
   const photographers = await getPhotographers();
   displayData(photographers);
 };

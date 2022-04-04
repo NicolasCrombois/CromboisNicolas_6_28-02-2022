@@ -22,7 +22,7 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" id="contact_close_button" alt="Close contact modal" />
+          <img src="assets/icons/close.svg" id="contact_close_button" tabindex="0" alt="Close contact modal" />
         </header>
 				<form>
 					<div>
@@ -51,7 +51,7 @@
             aria-describedby="message"
             type="text"></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <input type="button" action="POST" class="contact_button" onclick="sendForm(idUser, namePhotographer)" value="Envoyer"></input>
 				</form>
 			</div>
 		</div>
@@ -73,9 +73,9 @@
           aria-activedescendant="true"
           aria-selected
           aria-labelledby="filter">
-            <div id="popularity" tabindex=0 onclick="setOption('Popularité', 'popularity')">Popularité</div>
-            <div id="date" tabindex=0 onclick="setOption('Date', 'date')">Date</div>
-            <div id="title" tabindex=0 onclick="setOption('Titre', 'title')">Titre</div>
+            <div id="popularity" onclick="setOption('Popularité', 'popularity')" tabindex=0>Popularité</div>
+            <div id="date" onclick="setOption('Date', 'date')" tabindex=0 >Date</div>
+            <div id="title" onclick="setOption('Titre', 'title')" tabindex=0>Titre</div>
           </div>
         </div>
       </div>
@@ -84,9 +84,9 @@
     </section>
     <section id="lightbox">
      <div class="menu">
-        <img id="closeModal" alt="Close Modal" tabindex=3 src="assets/icons/close.svg" />
-        <img id="arrow-right" alt="Next Publication" tabindex=3 src="assets/icons/arrow-right.svg"/>
-        <img id="arrow-left" alt="Previous Publication" tabindex=3 src="assets/icons/arrow-right.svg"/>
+        <img id="closeModal" alt="Close Modal" tabindex=0 src="assets/icons/close.svg" onclick="closeLightbox()"/>
+        <img id="arrow-right" alt="Next Publication" tabindex=0 src="assets/icons/arrow-right.svg" onclick="switchNext()"/>
+        <img id="arrow-left" alt="Previous Publication" tabindex=0 src="assets/icons/arrow-right.svg" onclick="switchPrevious()"/>
       </div> 
       <div class="view">
         
@@ -95,6 +95,7 @@
     <script src="scripts/factories/photographer.js"></script>
     <script src="scripts/factories/publication.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/lightBox.js"></script>
     <script src="scripts/pages/photographer.js"></script>
   </body>
 </html>
